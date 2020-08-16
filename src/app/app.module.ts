@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApixuService } from './apixu.service';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     HttpClientModule,
     NgxChartsModule,
+    MatTableModule,
     BrowserAnimationsModule
   ],
   providers: [ApixuService],

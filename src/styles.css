@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+html, body { height: 100%; }
+body { background-color:#f8f9fa; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.td{
+    font-family: "Times New Roman", Times, serif;
+}
+h3.normal{
+    font-weight: bold;
+}
+h4.normal{
+    font-weight: 900;
+}

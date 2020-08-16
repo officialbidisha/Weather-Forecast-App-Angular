@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import {ApixuService} from '../apixu.service';
 import { fromUnixTime, format} from 'date-fns';
 
+
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
@@ -53,7 +54,7 @@ export class WeatherComponent implements OnInit {
    
   timezoneOffset: number = (new Date()).getTimezoneOffset()*60;
   multi: any[];
-  view: any[] = [700, 300];
+  view: any[] = [800, 400];
 
   // options
   legend: boolean = true;
