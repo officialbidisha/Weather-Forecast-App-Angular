@@ -1,18 +1,35 @@
+
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WeatherComponent } from './weather/weather.component';
+import {RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ApixuService } from './apixu.service';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule,
+    HttpClientModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ApixuService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule { 
+}

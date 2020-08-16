@@ -1,0 +1,81 @@
+<div id="container" class="p-3">
+  <div class="d-flex justify-content-center">
+    <form
+      [formGroup]="weatherSearchForm"
+      (ngSubmit)="
+        sendToAPIXU(weatherSearchForm.value);
+        sendToForecast(weatherSearchForm.value)
+      "
+    >
+      <div class="row">
+        <div class="md-form active-pink active-pink-2 mb-3">
+          <input
+            class="form-control"
+            type="search"
+            id="search1"
+            aria-label="Search"
+            formControlName="location"
+            mdbInput
+          />
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-secondary btn-md">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="p-2"></div>
+  <!-- <div class=""> -->
+  <div class="row mx-md-n5">
+    <div class="col px-md-5">
+        <div *ngIf="weatherData">
+        <div class="p-3 border bg-light">
+          <h3>Weather</h3>
+          <p>
+            Latitude: {{ weatherData.coord.lat }}<br /><br />
+            Longitude: {{ weatherData.coord.lon }}
+          </p>
+          <p>Weather Details: {{ weatherData.weather[0].description }}</p>
+          <p>Temperature: {{ weatherData.main.temp }}</p>
+          <p>Pressure: {{ weatherData.main.pressure }}</p>
+          <p>Humidity: {{ weatherData.main.humidity }}</p>
+          <br />
+          <div id="pic">
+            <img [src]="icon" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col px-md-5 charts" *ngIf="multi">
+      <div class="p-3 border bg-light">
+        <h3>Five Day's Forecast</h3>
+        <ngx-charts-line-chart
+          
+          [view]="view"
+          [scheme]="colorScheme"
+          [legend]="legend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [timeline]="timeline"
+          [results]="multi"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+        >
+          <ng-template #tooltipTemplate let-model="model">
+            <div class="tooltip-label">
+              {{ model.series }} • {{ model.name | date: "E h:mm a" }}
+            </div>
+            <br />
+            <div class="tooltip-val">{{ model.value | number: "1.1-2" }}</div>
+          </ng-template>
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+</div>
