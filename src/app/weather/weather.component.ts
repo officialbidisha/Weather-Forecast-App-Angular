@@ -2,8 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {ApixuService} from '../apixu.service';
 import { fromUnixTime, format} from 'date-fns';
-
-
+import { ThemeService } from "src/app/theme/theme.service";
+import {
+  faLightbulb as faSolidLightbulb,
+  faDollarSign,
+  IconDefinition
+} from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb as faRegularLightbulb } from "@fortawesome/free-regular-svg-icons";
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
@@ -14,12 +19,35 @@ export class WeatherComponent implements OnInit {
   public weatherData:any;
   public forecastData:any;
   public icon: String="";
-  constructor(private formBuilder: FormBuilder,private apixuService: ApixuService) { }
+  faLightbulb: IconDefinition;
+  faDollarSign = faDollarSign;
 
+  constructor(private formBuilder: FormBuilder,private apixuService: ApixuService,private themeService:ThemeService) { 
+   
+  }
+  
   ngOnInit(): void {
+    this.setLightbulb();
     this.weatherSearchForm = this.formBuilder.group({
       location: [""],
     });
+  }
+  setLightbulb() {
+    if (this.themeService.isDarkTheme()) {
+      this.faLightbulb = faRegularLightbulb;
+    } else {
+      this.faLightbulb = faSolidLightbulb;
+    }
+  }
+
+  toggleTheme() {
+    if (this.themeService.isDarkTheme()) {
+      this.themeService.setLightTheme();
+    } else {
+      this.themeService.setDarkTheme();
+    }
+
+    this.setLightbulb();
   }
   processData(data){
   	console.log(data);
@@ -69,7 +97,8 @@ export class WeatherComponent implements OnInit {
   timeline: boolean = true;
 
   colorScheme:any = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+    //domain:['--color-scheme']
+    domain: [ '#1d67f7','#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   };
 
   onSelect(data): void {

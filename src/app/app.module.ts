@@ -12,7 +12,7 @@ import { ApixuService } from './apixu.service';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     NgxChartsModule,
     MatTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [ApixuService],
   bootstrap: [AppComponent]

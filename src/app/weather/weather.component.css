@@ -1,3 +1,5 @@
-.charts{
-    display:grid;
+::ng-deep .ngx-charts{
+    fill:var(--chartfiller);
+    float: none !important;
+    
 }

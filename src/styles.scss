@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+:root{
+    --background-light:#ffffff;
+    --color-scheme:['#ff3333','#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5'];
+    --stroke-color:#e4e4e4;
+    --weatherDiv-color:#ffffff;
+    --normalcolors:#000000;
+    --chartfiller:#000000;
+    --fillpath:#000000;
+    --radii:0px;
+}
+span{
+    color:var(--fillpath) !important;
+}
+.border{
+    background-color:var(--weatherDiv-color) !important;
+    border-radius: var(--radii)!important;
+   
+}
+body {
+    background-color: var(--background-light);
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
+    height:100%;
+  }
+  
+.charts{
+    display:grid;
+}
+  .td{
+      font-family: "Times New Roman", Times, serif;
+  }
+  h1.normal{
+    font-weight: bold;
+    color:var(--normalcolors) !important;
+  }
+  h3.normal{
+      font-weight: bold;
+      color:var(--normalcolors) !important;
+  }
+  h4.normal{
+      font-weight: 900;
+      color:var(--normalcolors) !important;
+  }
+  ngx-charts-line-chart .gridline-path{
+      stroke:var(--stroke-color) !important;
+      
+  }
+  
+  
