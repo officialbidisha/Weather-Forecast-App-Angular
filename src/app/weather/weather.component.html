@@ -1,18 +1,18 @@
 <div id="container" class="p-4">
   <div class="row">
-  <div class="d-flex justify-content-left col-md-5">
-    <span>
-      <fa-icon
-        [icon]="faLightbulb"
-        class="fa-2x"
-        (click)="toggleTheme()"
-      ></fa-icon>
-    </span>
+    <div class="d-flex justify-content-left col-md-5">
+      <span>
+        <fa-icon
+          [icon]="faLightbulb"
+          class="fa-2x"
+          (click)="toggleTheme()"
+        ></fa-icon>
+      </span>
+    </div>
+    <div class="col-md-5">
+      <h2 class="normal">Weather Application</h2>
+    </div>
   </div>
-  <div class="col-md-5">
-    <h1 class="normal">Weather Application</h1>
-  </div>
-</div>
   <div class="d-flex justify-content-center">
     <form
       [formGroup]="weatherSearchForm"
@@ -41,28 +41,26 @@
   <div class="p-2"></div>
   <!-- <div class=""> -->
   <div class="row mx-md-n5">
-    <div class="col px-md-5">
+    <div class="col px-md-5" >
       <div *ngIf="weatherData">
-        <div class="p-3 border bg-light">
-          <h3 class="normal">
-            <center>Weather <img [src]="icon" /></center>
-          </h3>
-          <table class="table table-striped">
+        <div class="p-3 border bg-light" >
+            <center><h3 class="normal">Weather Details <img [src]="icon"> </h3> </center>
+          <table class="table table-striped h-auto">
             <tbody>
               <tr>
-                <td><h3 class="normal">Longitude</h3></td>
+                <td><h4 class="normal">Longitude</h4></td>
                 <td>
                   <h4 class="normal">{{ weatherData.coord.lon }}</h4>
                 </td>
               </tr>
               <tr>
-                <td><h3 class="normal">Latitude</h3></td>
+                <td><h4 class="normal">Latitude</h4></td>
                 <td>
                   <h4 class="normal">{{ weatherData.coord.lat }}</h4>
                 </td>
               </tr>
               <tr>
-                <td><h3 class="normal">Weather Details</h3></td>
+                <td><h4 class="normal">Weather Details</h4></td>
                 <td>
                   <h4 class="normal">
                     {{ weatherData.weather[0].description }}
@@ -70,19 +68,19 @@
                 </td>
               </tr>
               <tr>
-                <td><h3 class="normal">Temperature</h3></td>
+                <td><h4 class="normal">Temperature</h4></td>
                 <td>
-                  <h4 class="normal">{{ weatherData.main.temp }}</h4>
+                  <h4 class="normal">{{ weatherData.main.temp }} K</h4>
                 </td>
               </tr>
               <tr>
-                <td><h3 class="normal">Pressure</h3></td>
+                <td><h4 class="normal">Pressure</h4></td>
                 <td>
                   <h4 class="normal">{{ weatherData.main.pressure }}</h4>
                 </td>
               </tr>
               <tr>
-                <td><h3 class="normal">Humidity</h3></td>
+                <td><h4 class="normal">Humidity</h4></td>
                 <td>
                   <h4 class="normal">{{ weatherData.main.humidity }}</h4>
                 </td>

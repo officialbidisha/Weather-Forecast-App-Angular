@@ -9,6 +9,8 @@
     --chartfiller:#000000;
     --fillpath:#000000;
     --radii:0px;
+    --width:3px;
+    
 }
 span{
     color:var(--fillpath) !important;
@@ -16,7 +18,13 @@ span{
 .border{
     background-color:var(--weatherDiv-color) !important;
     border-radius: var(--radii)!important;
-   
+    border-width: var(--width)!important;
+}
+.table{
+    margin:-0.15rem !important;
+    margin-bottom:-2px !important;
+    padding:3px;
+
 }
 body {
     background-color: var(--background-light);
@@ -32,12 +40,12 @@ body {
   }
   
 .charts{
-    display:grid;
+    height: auto;
 }
   .td{
       font-family: "Times New Roman", Times, serif;
   }
-  h1.normal{
+  h2.normal{
     font-weight: bold;
     color:var(--normalcolors) !important;
   }
