@@ -1,18 +1,20 @@
 <div id="container" class="p-4">
-  <div class="row">
-    <div class="d-flex justify-content-left col-md-5">
+ 
+    
+      
+    <div class="d-flex justify-content-center">
       <span>
         <fa-icon
           [icon]="faLightbulb"
           class="fa-2x"
           (click)="toggleTheme()"
         ></fa-icon>
-      </span>
+      </span>  
+      <div class="mr-3"></div>
+      <h2 class="normal"  style="display: inline-block !important;">Weather Application</h2>
     </div>
-    <div class="col-md-5">
-      <h2 class="normal">Weather Application</h2>
-    </div>
-  </div>
+    
+ 
   <div class="d-flex justify-content-center">
     <form
       [formGroup]="weatherSearchForm"
@@ -22,17 +24,19 @@
       "
     >
       <div class="row">
-        <div class="md-form active-pink active-pink-2 mb-3">
+        <div class="md-form active-pink active-pink-2 mb-2">
           <input
             class="form-control"
             type="search"
             id="search1"
+           
             aria-label="Search"
             formControlName="location"
             mdbInput
           />
         </div>
-        <div class="col-md-4">
+        <div class="mr-3"></div>
+        <div  style="display:inline-block !important;" >
           <button type="submit" class="btn btn-secondary btn-md">Search</button>
         </div>
       </div>
